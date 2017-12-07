@@ -1,0 +1,16 @@
+go demonstration
+HSLU - PCP
+07 Dec 2017
+
+by Alan, Philipp
+
+https://github.com/Che4ter/pcp-go
+
+
+* Aufgabe: verwandschaft
+
+.play verwandschaft/verwandschaft.go /^func main/,/^}/
+
+.code verwandschaft/verwandschaft.go /^func initBrother/,/^}/
+
+.code verwandschaft/verwandschaft.go /^func findBrother/,/^}/
