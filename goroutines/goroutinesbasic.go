@@ -5,9 +5,9 @@ import (
 	"time"
 )
 
-func talking(receiver string){
-	for i := 0; ; i++{
-		fmt.Println("Hello ",receiver,":", i)
+func talking(receiver string) {
+	for i := 0; ; i++ {
+		fmt.Println("Hello ", receiver, ":", i)
 		<-time.After(time.Millisecond * 200)
 	}
 }

@@ -11,7 +11,7 @@ func readPerson() string {
 	fmt.Print("Check person: ")
 	reader := bufio.NewReader(os.Stdin)
 	person, _ := reader.ReadString('\n')
-	
+
 	person = strings.Replace(person, "\r", "", -1)
 	person = strings.Replace(person, "\n", "", -1)
 
