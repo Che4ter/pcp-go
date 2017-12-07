@@ -6,12 +6,22 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"sort"
 )
 
 func main() {
 	unsortedList := readList()
-	sortedList := sortList(unsortedList)
+	asc := readAsc()
+	sortedList := sortList(unsortedList, asc)
 	fmt.Println(sortedList)
+}
+
+func readAsc() bool {
+	fmt.Println("Type ASC for ascending:")
+	reader := bufio.NewReader(os.Stdin)
+	input, _ := reader.ReadString('\n')
+	
+	return strings.ContainsAny("ASC", strings.ToUpper(input))
 }
 
 func readList() []int {
@@ -33,15 +43,12 @@ func readList() []int {
 	return unsortedList
 }
 
-func sortList(unsortedList []int) []int {
-	for i, n := range unsortedList {
-		if i < len(unsortedList)-1 {
-			if n > unsortedList[i+1] {
-				unsortedList[i] = unsortedList[i+1]
-				unsortedList[i+1] = n
-			}
-		}
+func sortList(unsortedList []int, asc bool) []int {
+	if asc == true {
+		sort.Sort(sort.IntSlice(unsortedList))
+	} else {
+		sort.Sort(sort.Reverse(sort.IntSlice(unsortedList)))
 	}
-
+	
 	return unsortedList
 }
