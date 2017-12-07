@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"bufio"
+	"fmt"
 	"os"
 	"strings"
 	"text/tabwriter"
@@ -14,7 +14,7 @@ func main() {
 	summandA := getSummand(equation, true)
 	summandB := getSummand(equation, false)
 	sum := getSum(equation)
-	
+
 	fmt.Println(summandA, "+", summandB, "=", sum)
 	solve(summandA, summandB, sum)
 }
@@ -24,26 +24,26 @@ func readEquation() string {
 	fmt.Print("Enter equation: ")
 	reader := bufio.NewReader(os.Stdin)
 	equation, _ := reader.ReadString('\n')
-	
+
 	return strings.ToUpper(equation)
 }
 
 func getSummand(equation string, first bool) string {
 	var summand string
-	
+
 	if first == true {
 		summand = strings.Split(equation, "+")[0]
 	} else {
 		summand = strings.Split(equation, "+")[1]
 		summand = strings.Split(summand, "=")[0]
 	}
-	
+
 	return strings.Replace(summand, " ", "", -1)
 }
 
 func getSum(equation string) string {
 	sum := strings.Split(equation, "=")[1]
-	
+
 	return strings.Replace(sum, " ", "", -1)
 }
 
@@ -51,21 +51,21 @@ func solve(summandA, summandB, sum string) {
 	weightedA := weighExpression(summandA)
 	weightedB := weighExpression(summandB)
 	weightedSum := weighExpression(sum)
-	
+
 	/* exit if sum length is shorter than a */
 	if len(weightedA) > len(weightedSum) {
 		fmt.Println("Sum needs to be longer than Summand")
 		os.Exit(3)
 	}
-	
+
 	zero := []byte{65}
 	for len(weightedSum) > len(weightedA) {
-		weightedA = append(zero, weightedA...) 
+		weightedA = append(zero, weightedA...)
 	}
 	for len(weightedSum) > len(weightedB) {
-		weightedB = append(zero, weightedB...) 
+		weightedB = append(zero, weightedB...)
 	}
-	
+
 	/* map letters to numbers */
 	for _, n := range weightedA {
 		allDistinct(n)
@@ -76,7 +76,7 @@ func solve(summandA, summandB, sum string) {
 	for _, n := range weightedSum {
 		allDistinct(n)
 	}
-	
+
 	/* reassign summand numbers */
 	for i, n := range weightedSum {
 		indexA := weightedA[i]
@@ -85,7 +85,7 @@ func solve(summandA, summandB, sum string) {
 		weightedB[i] = byte(distinct[indexB])
 		weightedSum[i] = byte(distinct[n])
 	}
-	
+
 	i := len(weightedA) - 1
 	for i > 0 {
 		valSum := weightedA[i] + weightedB[i]
@@ -93,10 +93,10 @@ func solve(summandA, summandB, sum string) {
 		i--
 	}
 	fmt.Println()
-	
+
 	/* Print neatly aligned */
 	w := new(tabwriter.Writer)
-	
+
 	w.Init(os.Stdout, 5, 0, 1, ' ', tabwriter.AlignRight)
 	fmt.Fprintln(w, summandA, "\t", weightedA)
 	fmt.Fprintln(w, summandB, "\t", weightedB)
@@ -106,6 +106,7 @@ func solve(summandA, summandB, sum string) {
 
 var distinct = make(map[byte]int)
 var index int
+
 func allDistinct(n byte) {
 	if _, ok := distinct[n]; ok {
 		/* do nothing */
@@ -115,7 +116,6 @@ func allDistinct(n byte) {
 	}
 }
 
-
 func weighExpression(expression string) []byte {
 	weightedExpression := []byte(expression)
 	for i, c := range weightedExpression {
@@ -123,6 +123,6 @@ func weighExpression(expression string) []byte {
 			weightedExpression = weightedExpression[:i]
 		}
 	}
-		
+
 	return weightedExpression
 }

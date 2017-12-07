@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"bufio"
+	"fmt"
 	"os"
 	"strings"
 )
@@ -12,11 +12,15 @@ func readPerson() string {
 	reader := bufio.NewReader(os.Stdin)
 	person, _ := reader.ReadString('\n')
 	
+	person = strings.Replace(person, "\r", "", -1)
+	person = strings.Replace(person, "\n", "", -1)
+
 	/* remove LF and CR (linefeed and carriage return) */
-	return strings.ToLower(person[:len(person) - 2])
+	return strings.ToLower(person)
 }
 
 var brother = make(map[string]string)
+
 func main() {
 	initBrother()
 	person := readPerson()
