@@ -7,10 +7,19 @@ by Alan, Philipp
 https://github.com/Che4ter/pcp-go
 
 
-* Aufgabe: verwandschaft
+* Aufgabe: Telefon Buch
 
-.play verwandschaft/verwandschaft.go /^func main/,/^}/
+.play telefon_book/telefon_book.go /^func main/,/^}/
+.code telefon_book/telefon_book.go /^func main/,/^}/
 
-.code verwandschaft/verwandschaft.go /^func initBrother/,/^}/
+* Aufgabe: First Class Function
 
-.code verwandschaft/verwandschaft.go /^func findBrother/,/^}/
+.play first_class_function/first_class_function.go /^func main/,/^}/
+.code first_class_function/first_class_function.go /^func main/,/^}/
+.code first_class_function/first_class_function.go /^func sumUp/,/^}/
+
+* Aufgabe: First Class Function
+
+.play first_class_function/first_class_function.go /^func main/,/^}/
+.code first_class_function/first_class_function.go /^func main/,/^}/
+.code first_class_function/first_class_function.go /^func sumUp/,/^}/

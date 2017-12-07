@@ -23,12 +23,12 @@ var brother = make(map[string]string)
 
 func main() {
 	initBrother()
-	person := readPerson()
+	person := "alan"
 	findBrother(person)
 }
 
 func initBrother() {
-	brother["alan"] = "philipp"
+	brother["alan"] = "philipp" // HL
 	brother["philipp"] = "alan"
 }
 
