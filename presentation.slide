@@ -17,9 +17,3 @@ https://github.com/Che4ter/pcp-go
 .play first_class_function/first_class_function.go /^func main/,/^}/
 .code first_class_function/first_class_function.go /^func main/,/^}/
 .code first_class_function/first_class_function.go /^func sumUp/,/^}/
-
-* Aufgabe: First Class Function
-
-.play first_class_function/first_class_function.go /^func main/,/^}/
-.code first_class_function/first_class_function.go /^func main/,/^}/
-.code first_class_function/first_class_function.go /^func sumUp/,/^}/
