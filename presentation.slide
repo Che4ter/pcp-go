@@ -9,11 +9,19 @@ https://github.com/Che4ter/pcp-go
 
 * Aufgabe: Telefon Buch
 
-.play telefon_book/telefon_book.go /^func main/,/^}/
-.code telefon_book/telefon_book.go /^func main/,/^}/
+.code telefon_book/telefon_book.go /^func addTelefonBookEntries/,/^}/
+.code telefon_book/telefon_book.go /^func changeTelefonBookEntry/,/^}/
+.code telefon_book/telefon_book.go /^func deleteTelefonBookEntry/,/^}/
 
 * Aufgabe: First Class Function
 
 .play first_class_function/first_class_function.go /^func main/,/^}/
 .code first_class_function/first_class_function.go /^func main/,/^}/
 .code first_class_function/first_class_function.go /^func sumUp/,/^}/
+
+* Aufgabe: First Class Function
+
+.play sort_list/sort_list.go /^func main/,/^}/
+.code sort_list/sort_list.go /^func Sort/,/^}/
+.code sort_list/sort_list.go /^func ASC/,/^}/
+.code sort_list/sort_list.go /^func DESC/,/^}/
