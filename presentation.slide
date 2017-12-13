@@ -5,7 +5,60 @@ HSLU - PCP
 by Alan, Philipp
 
 https://github.com/Che4ter/pcp-go
+* Live Slides
 
+Live Slides verfügbar unter
+.link http://x1:4242 http://x1:4242
+
+* Einleitung
+- seit 2009
+- von Google Mitarbeitern
+- Typisierung: start, statisch
+- Paradigmas: Concurrent, Imperativ, Strukturiert
+- Garbage Collection, Memory safety,
+- Lizenz: BSD
+.image https://upload.wikimedia.org/wikipedia/commons/2/23/Golang.png 100 _
+.caption _Gopher_ by [[https://www.instagram.com/reneefrench/][Renée French]]
+
+* Concurrency vs Parallelism
+Concurrency is about dealing with lots of things at once.
+
+Parallelism is about doing lots of things at once.
+
+Not the same, but related.
+
+* Einfache Arbeit
+.image images/GoSimple.jpg 500 _
+
+* Paralelle Arbeit
+.image images/GoParallel.jpg 500 _
+
+* Concurrent Arbeit
+.image images/GoConcurrent.jpg 500 _
+
+* Paralele Concurrent Arbeit
+.image images/GoConcurrent.jpg 110 _
+.image images/GoConcurrent.jpg 110 _
+.image images/GoConcurrent.jpg 110 _
+
+* Go Concurrency Support
+
+Go bietet:
+- concurrent execution (goroutines)
+- synchronization and messaging (channels)
+- multi-way concurrent control (select)
+
+* Beispiel goroutines
+.code goroutines/goroutinesbasic.go /^func talking/,/^}/
+.play goroutines/goroutinesbasic.go /^func main/,/^}/
+
+* Beispiel goroutines
+.code goroutines/goroutines_waitgroup.go /^func f/,/^}/
+.play goroutines/goroutines_waitgroup.go /^func main/,/^}/
+
+* Beispiel goroutines
+.code goroutines/goroutineschannels.go /^func talkingback/,/^}/
+.play goroutines/goroutineschannels.go /^func main/,/^}/
 
 * Aufgabe: Telefon Buch
 

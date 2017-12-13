@@ -17,7 +17,7 @@ func main() {
 	fmt.Println("Start talking")
 	go talkingback("Alan", msg)
 	go talkingback("Philipp", msg)
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 100; i++ {
 		fmt.Printf("You say: %q\n", <-msg)
 	}
 }

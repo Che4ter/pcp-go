@@ -8,7 +8,7 @@ import (
 func f(from string, wg *sync.WaitGroup) {
 	defer wg.Done()
 
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 5; i++ {
 		fmt.Println(from, ":", i)
 	}
 }
