@@ -1,6 +1,6 @@
 go demonstration
 HSLU - PCP
-07 Dec 2017
+21 Dec 2017
 
 by Alan, Philipp
 
@@ -8,24 +8,27 @@ https://github.com/Che4ter/pcp-go
 * Live Slides
 
 Live Slides verfügbar unter
-.link http://x1:4242 http://x1:4242
+.link http://10.155.107.140:4242 http://10.155.107.140:4242
 
 * Einleitung
 - seit 2009
 - von Google Mitarbeitern
-- Typisierung: start, statisch
+- Typisierung: stark, statisch
 - Paradigmas: Concurrent, Imperativ, Strukturiert
-- Garbage Collection, Memory safety,
+- Garbage Collection, Memory safety
+- Einfaches cross-compiling
 - Lizenz: BSD
-.image https://upload.wikimedia.org/wikipedia/commons/2/23/Golang.png 100 _
+- Verbreitung: Google, Kubernetes, BBC, Novartis, Cloudflare, Twitter, Dropbox, SpaceX, Atlassian...
+.image https://upload.wikimedia.org/wikipedia/commons/2/23/Golang.png 80 _
 .caption _Gopher_ by [[https://www.instagram.com/reneefrench/][Renée French]]
 
 * Concurrency vs Parallelism
-Concurrency is about dealing with lots of things at once.
+    Concurrency is about dealing with lots of things at once.
+    Parallelism is about doing lots of things at once.
 
-Parallelism is about doing lots of things at once.
+    Not the same, but related.
 
-Not the same, but related.
+.caption by [[https://talks.golang.org/2012/waza.slide#1][Rob Pike]]
 
 * Einfache Arbeit
 .image images/GoSimple.jpg 500 _
@@ -37,9 +40,9 @@ Not the same, but related.
 .image images/GoConcurrent.jpg 500 _
 
 * Paralele Concurrent Arbeit
-.image images/GoConcurrent.jpg 110 _
-.image images/GoConcurrent.jpg 110 _
-.image images/GoConcurrent.jpg 110 _
+.image images/GoConcurrent.jpg 130 _
+.image images/GoConcurrent.jpg 130 _
+.image images/GoConcurrent.jpg 130 _
 
 * Go Concurrency Support
 
@@ -48,33 +51,43 @@ Go bietet:
 - synchronization and messaging (channels)
 - multi-way concurrent control (select)
 
-* Beispiel goroutines
-.code goroutines/goroutinesbasic.go /^func talking/,/^}/
-.play goroutines/goroutinesbasic.go /^func main/,/^}/
 
-* Beispiel goroutines
-.code goroutines/goroutines_waitgroup.go /^func f/,/^}/
+* Demo: goroutines waitgroup
+.code goroutines/goroutines_waitgroup.go /^func talking/,/^}/
 .play goroutines/goroutines_waitgroup.go /^func main/,/^}/
 
-* Beispiel goroutines
+* Demo: goroutines channels
 .code goroutines/goroutineschannels.go /^func talkingback/,/^}/
 .play goroutines/goroutineschannels.go /^func main/,/^}/
 
-* Aufgabe: Telefon Buch
 
-.code telefon_book/telefon_book.go /^func addTelefonBookEntries/,/^}/
-.code telefon_book/telefon_book.go /^func changeTelefonBookEntry/,/^}/
-.code telefon_book/telefon_book.go /^func deleteTelefonBookEntry/,/^}/
+* Demo: First Class Function mit Sort Operator
 
-* Aufgabe: First Class Function
-
-.play first_class_function/first_class_function.go /^func main/,/^}/
-.code first_class_function/first_class_function.go /^func main/,/^}/
-.code first_class_function/first_class_function.go /^func sumUp/,/^}/
-
-* Aufgabe: First Class Function
-
-.play sort_list/sort_list.go /^func main/,/^}/
 .code sort_list/sort_list.go /^func Sort/,/^}/
 .code sort_list/sort_list.go /^func ASC/,/^}/
 .code sort_list/sort_list.go /^func DESC/,/^}/
+.play -edit sort_list/sort_list.go /^func main/,/^}/
+
+
+* Demo: Cross Plattform
+    main_windows.go
+.code cross_plattform/main_windows.go /^func GetCommand/,/^}/
+
+    main_linuxlike.go
+.code cross_plattform/main_linuxlike.go /^func GetCommand/,/^}/
+.code cross_plattform/main.go /^func main/,/^}/
+
+* Fazit: Team
+- Ja, z.B. Backendapplikation, Concurrency lastige Applikationen
+- Schnell (Compiler/Laufzeit), Memory safety, gute Standart Bibilothek
+
+- Weniger geignet: Desktop Applikationen
+- Kein UI Toolkit
+
+* Fazit: Alan
+
+.image http://ipengineer.net/wp-content/uploads/2016/07/gophercloud.png 500 _
+
+* Fazit: Philipp
+
+.image https://forum.golangbridge.org/uploads/default/original/2X/0/03cbc1a9f9178055093eb0c25ba9df2c29611671.png 500 _

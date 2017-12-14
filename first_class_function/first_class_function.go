@@ -2,13 +2,15 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func sumUp() func(int) int {
-	base := 0
+	base := 0 // HL
 
 	return func(value int) int {
-		base += value
+		base += value // HL
+		<-time.After(time.Millisecond * 1000)
 		return base
 	}
 }

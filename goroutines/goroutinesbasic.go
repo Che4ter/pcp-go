@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func talking(receiver string) {
+func talking_basic(receiver string) {
 	for i := 0; ; i++ {
 		fmt.Println("Hello ", receiver, ":", i)
 		<-time.After(time.Millisecond * 200)
@@ -14,8 +14,8 @@ func talking(receiver string) {
 
 func main() {
 	fmt.Println("Start talking")
-	go talking("Alan")
-	go talking("Philipp")
+	go talking_basic("Alan")
+	go talking_basic("Philipp")
 
 	<-time.After(time.Second * 5)
 }
