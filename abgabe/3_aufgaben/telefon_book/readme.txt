@@ -1,0 +1,1 @@
+Dies ist eine Scheme Aufgabe und zeigt eine alternative wie ein Telefonbuch erstellt und verändert werden kann.

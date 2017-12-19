@@ -1,0 +1,1 @@
+Dies ist eine PCP Übung und zeigt einen alternativen weg eine Fibonacci-Sequenz zu erstellen.
