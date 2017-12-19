@@ -7,8 +7,8 @@ import (
 
 func login(name string) (string, error) {
 	if name == "alan" {
-		return "hello alan" ,nil
-	}else{
+		return "hello alan", nil
+	} else {
 		return "bad request", errors.New("unkown user")
 	}
 }

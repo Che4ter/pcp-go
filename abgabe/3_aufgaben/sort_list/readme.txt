@@ -1,1 +1,0 @@
-Dies ist eine Scheme Aufgabe und zeigt eine alternative zum Sortieren von Listen.
