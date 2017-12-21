@@ -40,9 +40,7 @@ Live Slides verfügbar unter
 .image images/GoConcurrent.jpg 500 _
 
 * Paralele Concurrent Arbeit
-.image images/GoConcurrent.jpg 130 _
-.image images/GoConcurrent.jpg 130 _
-.image images/GoConcurrent.jpg 130 _
+.image images/GoConcurrentMulti.png 500 _
 
 * Go Concurrency Support
 
