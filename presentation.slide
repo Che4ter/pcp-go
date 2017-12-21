@@ -77,7 +77,7 @@ Go bietet:
 
 * Fazit: Team
 - Ja, z.B. Backendapplikation, Concurrency lastige Applikationen
-- Schnell (Compiler/Laufzeit), Memory safety, gute Standart Bibilothek
+- Schnell (Compiler/Laufzeit), Memory safety, gute Standard Bibilothek
 
 - Weniger geignet: Desktop Applikationen
 - Kein UI Toolkit

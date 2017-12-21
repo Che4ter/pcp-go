@@ -6,6 +6,7 @@ import (
 )
 
 var telefonBook = make(map[string]string)
+
 // START OMIT
 // run program
 // END OMIT
